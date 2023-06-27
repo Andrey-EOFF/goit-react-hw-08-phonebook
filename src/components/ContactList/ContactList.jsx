@@ -8,7 +8,10 @@ import {
 } from './ContactList.styled';
 
 import { selectContacts, selectFilter } from 'redux/contactsSelectors';
-import { deleteContactThunk, fetchContactsThunk } from 'redux/contacts/thunks';
+import {
+  deleteContactThunk,
+  fetchContactsThunk,
+} from 'redux/contacts/thunksOperations';
 
 const ContactList = () => {
   const dispatch = useDispatch();
