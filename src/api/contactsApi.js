@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://648ad15117f1536d65e9be75.mockapi.io/';
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 export const fetchContactsAPI = async () => {
   try {
@@ -14,6 +14,7 @@ export const fetchContactsAPI = async () => {
 export const saveContactAPI = async contact => {
   try {
     const response = await axios.post('/contacts', contact);
+    console.log(response.data)
     return response.data;
   } catch (error) {
     throw new Error('Failed to save contact');
@@ -22,7 +23,11 @@ export const saveContactAPI = async contact => {
 
 export const deleteContactAPI = async contactId => {
   try {
-    await axios.delete(`/contacts/${contactId}`);
+
+    const response = await axios.delete(`/contacts/${contactId}`);
+    console.log(response.data)
+    return response.data;
+    
   } catch (error) {
     throw new Error('Failed to delete contact');
   }

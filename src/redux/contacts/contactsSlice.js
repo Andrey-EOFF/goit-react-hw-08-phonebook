@@ -1,5 +1,4 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-
 import {
   addContactThunk,
   deleteContactThunk,
@@ -28,9 +27,9 @@ const handleFulfilledDel = (state, { payload: contactId }) => {
   state.items = state.items.filter(e => e.id !== contactId);
 };
 
-const handleRejected = (state, { payload }) => {
-  state.isLoading = false;
-  state.error = payload;
+const handleRejected = (state, action) => {
+  state.contacts.isLoading = false;
+  state.contacts.error = action.payload;
 };
 
 export const contactsSlice = createSlice({
