@@ -1,11 +1,12 @@
 import { LoginForm } from "components/LoginForm/LoginForm";
+import { LoginWrapper, Title } from "./LoginPage.styled";
 
 
 export default function Login() {
   return (
-    <div>
-      <title>Login</title>
+    <LoginWrapper>
+      <Title>Login</Title>
       <LoginForm />
-    </div>
+    </LoginWrapper>
   );
 }

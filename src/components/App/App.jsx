@@ -1,26 +1,3 @@
-// import { Layout } from 'components/Layout';
-// import { Container } from './App.styled';
-// import { Route, Routes } from 'react-router-dom';
-// import ContactForm from 'components/ContactForm/ContactForm';
-// import ContactList from 'components/ContactList/ContactList';
-// import { lazy } from 'react';
-
-// const HomePage = lazy(() => import('../../pages/Home/HomePage'));
-// const App = () => (
-//   <Container>
-//     <Routes>
-//       <Route path="/" element={<Layout />}>
-//         <Route index element={<HomePage />} />
-//         <Route path="contacts" element={<ContactForm />} />
-//         <Route path="contacts/:contactId" element={<ContactList />} />
-//       </Route>
-//     </Routes>
-//   </Container>
-// );
-
-// export default App;
-
-
 import { Layout } from 'components/Layout';
 import { PrivateRoute } from 'components/ProvateRoute';
 import { RestrictedRoute } from 'components/RestrictedRoute';

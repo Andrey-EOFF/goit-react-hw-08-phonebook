@@ -1,11 +1,11 @@
-import { RegisterForm } from "components/RegisterForm/RegisterForm";
-
+import { RegisterForm } from 'components/RegisterForm/RegisterForm';
+import { RegisterWrapper, Title } from './RegisterPage.styled';
 
 export default function Register() {
   return (
-    <div>
-      <title>Registration</title>
+    <RegisterWrapper>
+      <Title>Registration</Title>
       <RegisterForm />
-    </div>
+    </RegisterWrapper>
   );
 }

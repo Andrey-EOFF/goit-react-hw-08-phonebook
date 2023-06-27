@@ -28,8 +28,8 @@ const handleFulfilledDel = (state, { payload: contactId }) => {
 };
 
 const handleRejected = (state, action) => {
-  state.contacts.isLoading = false;
-  state.contacts.error = action.payload;
+  state.isLoading = false;
+  state.error = action.payload;
 };
 
 export const contactsSlice = createSlice({
