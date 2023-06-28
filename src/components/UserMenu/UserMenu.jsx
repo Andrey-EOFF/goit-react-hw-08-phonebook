@@ -12,6 +12,7 @@ const UserMenuWrapper = styled.div`
 
 const WelcomeText = styled.p`
   margin-right: 10px;
+  
 `;
 
 const LogoutButton = styled.button`

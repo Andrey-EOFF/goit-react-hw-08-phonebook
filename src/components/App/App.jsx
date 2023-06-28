@@ -7,8 +7,6 @@ import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/authOperations';
 
-
-
 const HomePage = lazy(() => import('../../pages/Home/HomePage'));
 const RegisterPage = lazy(() => import('../../pages/Register/RegisterPage'));
 const LoginPage = lazy(() => import('../../pages/Login/LoginPage'));

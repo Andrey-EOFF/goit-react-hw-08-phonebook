@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { Form, Label, Button } from './ContactForm.styled';
-import { selectContacts } from 'redux/contactsSelectors';
+import { selectContacts } from 'redux/contacts/contactsSelectors';
 import { addContactThunk } from 'redux/contacts/thunksOperations';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
   const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
@@ -17,7 +17,7 @@ const ContactForm = () => {
     if (name === 'name') {
       setName(value);
     } else if (name === 'number') {
-      setPhone(value);
+      setNumber(value);
     }
   };
 
@@ -26,7 +26,7 @@ const ContactForm = () => {
 
     const isNameAlreadyExist = contacts.some(contact => contact.name === name);
     const isPhoneAlreadyExist = contacts.some(
-      contact => contact.phone === phone
+      contact => contact.number === number
     );
 
     if (isNameAlreadyExist) {
@@ -34,14 +34,14 @@ const ContactForm = () => {
       return;
     }
     if (isPhoneAlreadyExist) {
-      alert(`${phone} is already in contacts!`);
+      alert(`${number} is already in contacts!`);
       return;
     }
 
     const newContact = {
       id: nanoid(),
       name,
-      phone,
+      number,
     };
     try {
       dispatch(addContactThunk(newContact));
@@ -53,7 +53,7 @@ const ContactForm = () => {
 
   const reset = () => {
     setName('');
-    setPhone('');
+    setNumber('');
   };
 
   return (
@@ -76,7 +76,7 @@ const ContactForm = () => {
         Number
         <input
           onChange={handleChange}
-          value={phone}
+          value={number}
           type="tel"
           name="number"
           id="numberInputId"

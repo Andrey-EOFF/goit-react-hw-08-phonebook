@@ -7,7 +7,7 @@ import {
   StyledNumber,
 } from './ContactList.styled';
 
-import { selectContacts, selectFilter } from 'redux/contactsSelectors';
+import { selectContacts, selectFilter } from 'redux/contacts/contactsSelectors';
 import {
   deleteContactThunk,
   fetchContactsThunk,
@@ -30,17 +30,21 @@ const ContactList = () => {
     }
   };
 
+  // const filteredContacts = contacts.filter(contact =>
+  //   contact.name.toLowerCase().includes(filter.toLowerCase())
+  // );
+
   const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
+    contact.name.toLowerCase().includes(filter)
   );
 
   const renderedContacts = filter ? filteredContacts : contacts;
 
   return (
     <StyledContactList>
-      {renderedContacts.map(({ id, name, phone }) => (
+      {renderedContacts.map(({ id, name, number }) => (
         <StyledContactItem key={id}>
-          <StyledName>{name}</StyledName> <StyledNumber>{phone}</StyledNumber>
+          <StyledName>{name}</StyledName> <StyledNumber>{number}</StyledNumber>
           <button type="button" onClick={() => handleDeleteContact(id)}>
             Delete
           </button>

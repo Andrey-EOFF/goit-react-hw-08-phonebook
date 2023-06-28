@@ -1,29 +1,34 @@
 import styled from 'styled-components';
 
 const Form = styled.form`
-  /* Стили для формы */
   display: flex;
   flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #e2e1e1;
+  border-radius: 5px;
+  background-color: #f7f7f7;
 `;
 
 const Label = styled.label`
-  /* Стили для метки */
   margin-bottom: 10px;
+  color: #444444;
 `;
 
 const Input = styled.input`
-  /* Стили для текстового поля ввода */
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  margin-left: 10px;
+  border: 1px solid #e2e1e1;
   border-radius: 4px;
+  color: #444444;
 `;
 
 const Button = styled.button`
-  /* Стили для кнопки */
   padding: 10px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #62b4e8;
+  color: #ffffff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
