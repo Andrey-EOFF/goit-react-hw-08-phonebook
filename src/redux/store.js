@@ -1,6 +1,3 @@
-
-
-
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import {
   persistStore,
@@ -24,7 +21,6 @@ const middleware = [
   }),
 ];
 
-
 const authPersistConfig = {
   key: 'auth',
   storage,
@@ -37,7 +33,6 @@ export const store = configureStore({
     contacts: reducer,
   },
   middleware,
-  devTools: process.env.NODE_ENV === 'development',
 });
 
 export const persistor = persistStore(store);
