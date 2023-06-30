@@ -30,13 +30,13 @@ const ContactList = () => {
     }
   };
 
-  // const filteredContacts = contacts.filter(contact =>
-  //   contact.name.toLowerCase().includes(filter.toLowerCase())
-  // );
-
   const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter)
+    contact.name.toLowerCase().includes(filter.toLowerCase())
   );
+
+  // const filteredContacts = contacts.filter(contact =>
+  //   contact.name.toLowerCase().includes(filter)
+  // );
 
   const renderedContacts = filter ? filteredContacts : contacts;
 

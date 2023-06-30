@@ -14,7 +14,6 @@ export const fetchContactsAPI = async () => {
 export const saveContactAPI = async contact => {
   try {
     const response = await axios.post('/contacts', contact);
-    console.log(response.data)
     return response.data;
   } catch (error) {
     throw new Error('Failed to save contact');
@@ -23,14 +22,9 @@ export const saveContactAPI = async contact => {
 
 export const deleteContactAPI = async contactId => {
   try {
-
     const response = await axios.delete(`/contacts/${contactId}`);
-    console.log(response.data)
     return response.data;
-    
   } catch (error) {
     throw new Error('Failed to delete contact');
   }
 };
-
-
